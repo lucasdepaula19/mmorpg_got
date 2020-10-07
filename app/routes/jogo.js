@@ -8,4 +8,19 @@ module.exports = function(application){
 		//res.send('Bem vindo a sua app NodeJS!');
 		application.app.controllers.jogo.sair(application, req, res);
 	});
+
+	application.get('/suditos', function(req, res){
+		//res.send('Bem vindo a sua app NodeJS!');
+		application.app.controllers.jogo.suditos(application, req, res);
+	});
+
+	application.get('/pergaminhos', function(req, res){
+		//res.send('Bem vindo a sua app NodeJS!');
+		application.app.controllers.jogo.pergaminhos(application, req, res);
+	});
+
+	application.post('/ordenar_acao_sudito', function(req, res){
+		//res.send('Bem vindo a sua app NodeJS!');
+		application.app.controllers.jogo.ordenar_acao_sudito(application, req, res);
+	});
 }

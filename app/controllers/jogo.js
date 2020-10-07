@@ -18,3 +18,27 @@ module.exports.sair = function(application, req, res){
         res.render("index", {validacao: {}})
     })
 }
+
+module.exports.suditos = function(application, req, res){
+    res.render("aldeoes", {validacao: {}})
+}
+
+module.exports.pergaminhos = function(application, req, res){
+    res.render("pergaminhos", {validacao: {}})
+}
+
+module.exports.ordenar_acao_sudito = function(application, req, res){
+    var dadosForm = req.body;
+
+    req.assert('acao', 'Ação deve ser informada').notEmpty();
+    req.assert('quantidade', 'Quantidade deve ser informada').notEmpty();
+
+    var erros = req.validationErrors();
+
+    if(erros){
+        res.redirect('jogo');
+        return;
+    }
+
+    res.send('tudo ok!')
+}
